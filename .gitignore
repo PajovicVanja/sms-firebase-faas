@@ -1,0 +1,6 @@
+# Root
+.firebase/
+.firebaserc.local
+node_modules/
+functions/node_modules/
+
