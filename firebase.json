@@ -1,20 +1,10 @@
 {
   "functions": {
     "source": "functions",
-    "ignore": [
-      "node_modules",
-      ".git",
-      ".env",
-      ".env.*"
-    ],
-    "runtime": "nodejs18"
+    "runtime": "nodejs20"
   },
   "emulators": {
-    "functions": {
-      "port": 5001
-    },
-    "ui": {
-      "enabled": true
-    }
+    "functions": { "port": 5001, "host": "127.0.0.1" },
+    "ui": { "enabled": true, "port": 4000 }
   }
 }

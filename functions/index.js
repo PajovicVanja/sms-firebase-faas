@@ -6,6 +6,7 @@ import cors from 'cors';
 import { registerHealthRoutes } from './src/routes/health.js';
 import { registerGraphiqlRoutes } from './src/routes/graphiql.js';
 import { registerGraphQLRoutes } from './src/routes/graphql.js';
+import mockSmsProvider from './mock-sms-provider.js';
 
 admin.initializeApp();
 
@@ -27,4 +28,6 @@ app.get('/', (_req, res) => res.status(200).json({ service: 'sms-faas', status: 
 // 404
 app.use((req, res) => res.status(404).json({ error: `Not found: ${req.method} ${req.path}` }));
 
+// Export Cloud Functions
+export const mockSms = functions.https.onRequest(mockSmsProvider);
 export const api = functions.https.onRequest(app);
